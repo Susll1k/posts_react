@@ -17,7 +17,7 @@ export const Post = ({ title, text, id }) => {
         }}
       >
         <h1>{title}</h1>
-        <p>{text.slice(0, 100)}...</p> {/* Показываем только часть текста */}
+        <p>{text.slice(0, 100)}...</p>
         <Link to={`/post/${id}`} style={{ color: "lightblue", marginTop: "20px" }}>
           Читать подробнее
         </Link>
