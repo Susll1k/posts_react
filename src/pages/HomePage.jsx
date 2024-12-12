@@ -54,6 +54,9 @@ const posts = [
   ];
 
   const HomePage = () => {
+    const user = localStorage.getItem("user") ? JSON.parse(localStorage.getItem("user")) : null;
+    const img = user ? user.img : "";
+
     return (
       <div
         style={{
@@ -65,8 +68,20 @@ const posts = [
           gap: "20px",
         }}
       >
+        <div>
+        <img src={img} alt="" style={{
+          width:"150px",
+          height:"150px",
+          borderRadius:"100%"
+        }}/>
+        <h1>{user.username}</h1>
+
+        </div>
         {posts.map((post) => (
+      
           <Post key={post.id} id={post.id} title={post.title} text={post.content} />
+
+          
         ))}
       </div>
     );

@@ -55,7 +55,6 @@ const posts = [
   ];
 
 
-
 const PostPage = () => {
     const { id } = useParams();
     const post = posts.find((p) => p.id === parseInt(id));
@@ -63,19 +62,17 @@ const PostPage = () => {
     if (!post) {
       return <h1>Пост не найден</h1>;
     }
-  
+
     return (
       <div
         style={{
-          padding: "200px",
-          background: "rgb(48, 87, 88)",
           color: "#fff",
-          textAlign: "center",
+          textAlign: "center"
         }}
       >
         <h1>{post.title}</h1>
         <p>{post.content}</p>
-        <Link to="/" style={{ color: "blue", marginTop: "20px", display: "block" }}>
+        <Link to="/" style={{ color: "lightblue", marginBottom: "300px", display: "block" }}>
           Назад на главную
         </Link>
       </div>
